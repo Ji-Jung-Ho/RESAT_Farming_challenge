@@ -1,11 +1,14 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
+import SwiperCore, { Autoplay, Navigation } from "swiper";
 import './css/style.css'
 import 'swiper/swiper-bundle.css';
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Autoplay]);
 
 export default function App () {
+
+  // 6일차 : Carousel 구현
+  // 7일차 : 2초후 자동으로 슬라이드되는 Carousel 구현
 
   return (
     <div id='wrap'>
@@ -18,6 +21,10 @@ export default function App () {
           navigation={{
             prevEl: '.prev',
             nextEl: '.next'
+          }}
+          autoplay= {{
+            delay : 2000,
+            disableOnInteraction : false
           }}
         >
           <SwiperSlide><img src="./img/slide_1.jpg" alt="" /></SwiperSlide>
